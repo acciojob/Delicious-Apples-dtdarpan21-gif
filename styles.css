@@ -1,1 +1,287 @@
-/* your code here */
+
+:root {
+	--stage-green: #22C55E;
+	--card: #FFFFFF;
+	--ink: #1A1D29;
+	--muted: #9A9DA8;
+	--red: #FF5A4E;
+	--line: #EDEDED;
+
+	--font-body: "Work Sans", sans-serif;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: var(--font-body);
+	color: var(--ink);
+	line-height: 1.5;
+}
+
+
+.stage {
+	min-height: 100vh;
+	background: var(--stage-green);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 80px 40px;
+}
+
+
+.product {
+	position: relative;
+	width: 460px;
+}
+
+
+.product__info {
+	background: var(--card);
+	border-radius: 20px;
+	box-shadow: 0 40px 70px -20px rgba(0, 0, 0, 0.28);
+	padding: 44px 40px 40px 240px;
+	min-height: 380px;
+}
+
+
+.product__photo {
+	position: absolute;
+	left: -28px;
+	top: 16px;
+	width: 210px;
+	z-index: 2;
+}
+
+.photo-container {
+	background: linear-gradient(135deg, #AFDB63 0%, #6FAE2A 100%);
+	border-radius: 18px;
+	box-shadow: 0 30px 50px -15px rgba(60, 120, 20, 0.45);
+	overflow: hidden;
+}
+
+.photo-main {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 18px 18px 10px;
+	min-height: 210px;
+}
+
+.photo-main img {
+	width: 85%;
+	object-fit: contain;
+	filter: drop-shadow(0 12px 14px rgba(0, 0, 0, 0.2));
+}
+
+.controls {
+	position: absolute;
+	top: 12px;
+	left: 12px;
+	right: 12px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.controls i {
+	width: 26px;
+	height: 26px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: rgba(255, 255, 255, 0.9);
+	border-radius: 50%;
+	color: var(--ink);
+	font-size: 12px;
+	cursor: pointer;
+}
+
+.controls i:hover {
+	color: var(--red);
+}
+
+.photo-album {
+	background: var(--card);
+	padding: 10px 10px 12px;
+}
+
+.photo-album ul {
+	list-style: none;
+	display: flex;
+	gap: 8px;
+}
+
+.photo-album li {
+	flex: 1;
+	aspect-ratio: 1 / 1;
+	background: var(--card);
+	border: 1px solid var(--line);
+	border-radius: 8px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	transition: border-color 0.15s ease;
+}
+
+.photo-album li img {
+	width: 70%;
+	object-fit: contain;
+}
+
+.photo-album li.active,
+.photo-album li:hover {
+	border-color: var(--stage-green);
+}
+
+
+.title h1 {
+	font-size: 24px;
+	font-weight: 700;
+	color: var(--ink);
+}
+
+.title .code {
+	display: block;
+	margin-top: 4px;
+	font-size: 11px;
+	letter-spacing: 0.02em;
+	color: var(--muted);
+}
+
+
+.price {
+	display: flex;
+	align-items: baseline;
+	gap: 6px;
+	margin: 20px 0;
+}
+
+.price .currency {
+	font-size: 14px;
+	font-weight: 600;
+	color: var(--red);
+}
+
+.price .amount {
+	font-size: 32px;
+	font-weight: 700;
+	color: var(--red);
+}
+
+.variant h3,
+.description h3 {
+	font-size: 11px;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
+	color: var(--muted);
+	margin-bottom: 12px;
+}
+
+.description h3 {
+	margin-top: 22px;
+}
+
+
+.variant ul {
+	list-style: none;
+	display: flex;
+	gap: 10px;
+}
+
+.swatch {
+	width: 34px;
+	height: 34px;
+	border-radius: 9px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	border: 1.5px solid var(--line);
+	background: var(--card);
+	transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.swatch img {
+	width: 75%;
+	object-fit: contain;
+}
+
+.swatch:hover {
+	transform: translateY(-2px);
+}
+
+.swatch.active {
+	border-color: var(--stage-green);
+	border-width: 2px;
+}
+
+
+.benefits {
+	list-style: disc;
+	padding-left: 18px;
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+}
+
+.benefits li {
+	font-size: 13px;
+	color: #4A4D57;
+}
+
+.benefits li::marker {
+	color: var(--muted);
+}
+
+
+.add-to-cart {
+	margin-top: 26px;
+	width: 100%;
+	padding: 14px 24px;
+	background: var(--red);
+	color: white;
+	border: none;
+	border-radius: 10px;
+	font-family: var(--font-body);
+	font-size: 13px;
+	font-weight: 700;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	cursor: pointer;
+	transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.add-to-cart:hover {
+	background: #E9453A;
+	transform: translateY(-1px);
+}
+
+
+@media (max-width: 560px) {
+	.stage {
+		padding: 40px 16px;
+	}
+
+	.product {
+		width: 100%;
+		max-width: 400px;
+	}
+
+	.product__photo {
+		position: static;
+		width: 100%;
+		margin-bottom: -60px;
+		left: 0;
+		top: 0;
+	}
+
+	.product__info {
+		padding: 80px 24px 32px;
+	}
+}
